@@ -1,4 +1,4 @@
-name: ml
+name: mlops
 on: [push]
 jobs:
   run:
