@@ -34,6 +34,8 @@ for _ in range(100):
     print("Average Mean Squared Error:", average_mse)
     with open('metrics.txt', 'w') as outfile:
         outfile.write(f'\n Mean Squared Error = {average_mse}.')
+# Plotting the training data
+plt.scatter(X_train, y_train, color='blue', label='Training data')
 # Plotting the testing data
 plt.scatter(X_test, y_test, color='red', label='Testing data')
 plt.xlabel('X')
