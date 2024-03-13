@@ -21,14 +21,6 @@ for _ in range(100):
     X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=123)
     plt.scatter(X_train, y_train, color='blue', label='Training data')
 
-# Plotting the testing data
-    plt.scatter(X_test, y_test, color='red', label='Testing data')
-    plt.xlabel('X')
-    plt.ylabel('y')
-    plt.title('Training and Testing Data Split')
-    plt.legend()
-    plt.grid(True)
-    plt.savefig('model_results.png', dpi=120)
 
     # #############################################################################
     # Fitting the model
@@ -42,5 +34,14 @@ for _ in range(100):
     print("Average Mean Squared Error:", average_mse)
     with open('metrics.txt', 'w') as outfile:
         outfile.write(f'\n Mean Squared Error = {average_mse}.')
+# Plotting the testing data
+plt.scatter(X_test, y_test, color='red', label='Testing data')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.title('Training and Testing Data Split')
+plt.legend()
+plt.grid(True)
+plt.savefig('model_results.png', dpi=120)
+
 
 
