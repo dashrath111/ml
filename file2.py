@@ -28,7 +28,7 @@ for _ in range(100):
     plt.title('Training and Testing Data Split')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    plt.savefig('model_results.png', dpi=120)
 
     # #############################################################################
     # Fitting the model
