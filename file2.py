@@ -36,6 +36,8 @@ for _ in range(100):
 plt.scatter(X_train, y_train, color='blue', label='Training data')
 # Plotting the testing data
 plt.scatter(X_test, y_test, color='red', label='Testing data')
+plt.scatter(X_test, y_preds, c="g", label="Predictions")
+  # Show the legend
 plt.xlabel('X')
 plt.ylabel('y')
 plt.title('Training and Testing Data Split')
