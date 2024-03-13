@@ -8,23 +8,6 @@ from sklearn.model_selection import train_test_split
 import os
 import matplotlib.pyplot as plt
 
-plt.figure(figsize=(6, 5))
-  # Plot training data in blue
-plt.scatter(X_train, y_train, c="b", label="Training data")
-  # Plot test data in green
-plt.scatter(X_test, y_test, c="g", label="Testing data")
-  # Plot the predictions in red (predictions were made on the test data)
-plt.scatter(X_test, y_preds, c="r", label="Predictions")
-  # Show the legend
-plt.legend(shadow='True')
-  # Set grids
-plt.grid(which='major', c='#cccccc', linestyle='--', alpha=0.5)
-  # Some text
-plt.title('Model Results', family='Arial', fontsize=14)
-plt.xlabel('X axis values', family='Arial', fontsize=11)
-plt.ylabel('Y axis values', family='Arial', fontsize=11)
-  # Show
-plt.savefig('model_results.png', dpi=120)
 
 
 lr = LinearRegression()
@@ -42,6 +25,24 @@ for _ in range(100):
 
     lr.fit(X_train, y_train)
     y_preds = lr.predict(X_test)
+    plt.figure(figsize=(6, 5))
+  # Plot training data in blue
+    plt.scatter(X_train, y_train, c="b", label="Training data")
+  # Plot test data in green
+    plt.scatter(X_test, y_test, c="g", label="Testing data")
+  # Plot the predictions in red (predictions were made on the test data)
+    plt.scatter(X_test, y_preds, c="r", label="Predictions")
+  # Show the legend
+    plt.legend(shadow='True')
+  # Set grids
+    plt.grid(which='major', c='#cccccc', linestyle='--', alpha=0.5)
+  # Some text
+    plt.title('Model Results', family='Arial', fontsize=14)
+    plt.xlabel('X axis values', family='Arial', fontsize=11)
+    plt.ylabel('Y axis values', family='Arial', fontsize=11)
+  # Show
+    plt.savefig('model_results.png', dpi=120)
+
     test_mse = mean_squared_error(y_test, y_preds )
     average_mse = np.mean(test_mse)
     print(f'MSE Result: { test_mse}')
