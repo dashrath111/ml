@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 
 plt.figure(figsize=(6, 5))
   # Plot training data in blue
-plt.scatter(train_data, train_labels, c="b", label="Training data")
+plt.scatter(X_train, y_train, c="b", label="Training data")
   # Plot test data in green
-plt.scatter(test_data, test_labels, c="g", label="Testing data")
+plt.scatter(X_test, y_test, c="g", label="Testing data")
   # Plot the predictions in red (predictions were made on the test data)
-plt.scatter(test_data, predictions, c="r", label="Predictions")
+plt.scatter(X_test, y_preds, c="r", label="Predictions")
   # Show the legend
 plt.legend(shadow='True')
   # Set grids
@@ -42,7 +42,6 @@ for _ in range(100):
 
     lr.fit(X_train, y_train)
     y_preds = lr.predict(X_test)
-    plot_predictions(train_data=X_train, train_labels=y_train,  test_data=X_test, test_labels=y_test,  predictions=y_preds)
     test_mse = mean_squared_error(y_test, y_preds )
     average_mse = np.mean(test_mse)
     print(f'MSE Result: { test_mse}')
