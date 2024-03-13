@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 lr = LinearRegression()
 # #############################################################################
 # Load and split data
-for _ in range(100):
+for _ in range(50):
     rng = np.random.RandomState(_)
     x = 10 * rng.rand(1000).reshape(-1,1)
     y = 2 * x - 5 + rng.randn(1000).reshape(-1,1)
